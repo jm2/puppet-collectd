@@ -145,6 +145,19 @@ class collectd::params {
       $manage_repo        = false
       $package_configs    = {}
     }
+    'windows': {
+      $package_name       = 'collectd'
+      $package_provider   = undef
+      $collectd_dir       = 'C:/Program Files/collectd/configs'
+      $plugin_conf_dir    = $collectd_dir
+      $service_name       = 'collectd'
+      $config_file        = 'C:/Program Files/collectd/collectd.conf'
+      $config_group       = undef
+      $java_dir           = undef
+      $default_python_dir = 'C:/python_27'
+      $manage_repo        = false
+      $package_configs    = {}
+    }
 
     default: {
       fail("${facts['os']['family']} is not supported.")
